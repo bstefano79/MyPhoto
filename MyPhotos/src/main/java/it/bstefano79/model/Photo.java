@@ -5,6 +5,15 @@ public class Photo {
 	private int id;
 	private String url;
 	
+	public Photo() {
+		super();
+	}
+	
+	public Photo(int id, String url) {
+		this.id = id;
+		this.url = url;
+	}
+	
 	public int getId() {
 		return id;
 	}

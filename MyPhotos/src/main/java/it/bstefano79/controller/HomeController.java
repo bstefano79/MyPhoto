@@ -14,12 +14,6 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping("/admin")
-	public String admin()
-	{
-		return "admin";
-	}
-	
 	@RequestMapping("/hello/{name}")
 	@ResponseBody
 	public String Hello(@PathVariable String name)

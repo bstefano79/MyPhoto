@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import it.bstefano79.model.Photo;
 
-@Service
-public class PhotoService {
+@Service("mioPhotoService")
+public class PhotoService implements MainPhotoService {
 	private List<Photo> lista;
 	private int lastId;
 	
@@ -24,11 +24,13 @@ public class PhotoService {
 		lastId = lista.size();
 	}
 	
+	@Override
 	public Iterable<Photo> getAll()
 	{
 		return lista;
 	}
 	
+	@Override
 	public Photo getPhoto(int id)
 	{
 		Optional<Photo> opt = lista.stream().filter(value -> value.getId() == id).findFirst();
@@ -40,6 +42,7 @@ public class PhotoService {
 		return opt.get();
 	}
 	
+	@Override
 	public Photo createPhoto(Photo photo)
 	{	
 		photo.setId(++lastId);
@@ -47,6 +50,7 @@ public class PhotoService {
 		return photo;
 	}
 	
+	@Override
 	public Photo updatePhoto(int id, Photo photo)
 	{
 		Optional<Photo> opt = lista.stream().filter(value -> value.getId() == id).findFirst();
@@ -60,6 +64,7 @@ public class PhotoService {
 		return opt.get();
 	}
 	
+	@Override
 	public Photo deletePhoto(int id)
 	{
 		Optional<Photo> opt = lista.stream().filter(value -> value.getId() == id).findFirst();

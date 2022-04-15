@@ -1,6 +1,7 @@
 package it.bstefano79.controller.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,14 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import it.bstefano79.model.Photo;
-import it.bstefano79.service.PhotoService;
+import it.bstefano79.service.MainPhotoService;
 
 @RestController
 @RequestMapping("/admin/api")
 public class AdminPhotoController {
 	
 	@Autowired
-	PhotoService photoService;
+	@Qualifier("mioPhotoService")
+	MainPhotoService photoService;
 	
 	@RequestMapping(value = "/photos", method = RequestMethod.GET)
 	public Iterable<Photo> getAll()

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import it.bstefano79.model.Photo;
 
-@Service
+@Service("vuotoPhotoService")
 public class AltroPhotoService implements MainPhotoService {
 
 	@Override

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import it.bstefano79.model.Photo;
 
-@Service("mioPhotoService")
+@Service
 public class PhotoService implements MainPhotoService {
 	private List<Photo> lista;
 	private int lastId;

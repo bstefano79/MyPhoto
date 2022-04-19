@@ -19,7 +19,6 @@ public class PhotoController {
 	
 	@Autowired
 	@Qualifier("mioPhotoService")
-	//o si nomina l'istanza mainPhotoService o si usa @Qualifier("mainPhotoService")
 	MainPhotoService photoService;
 	
 	@RequestMapping(value = "/photos", method = RequestMethod.GET)

@@ -12,5 +12,11 @@ public class AdminController {
 	{
 		return "admin";
 	}
+	
+	@RequestMapping("/login")
+	public String login()
+	{
+		return "login";
+	}
 
 }

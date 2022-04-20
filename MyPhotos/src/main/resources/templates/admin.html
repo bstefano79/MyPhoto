@@ -58,7 +58,7 @@ SOFTWARE.
 						} else {
 							
 							$.ajax({
-								url : '/admin/api/photos',
+								url : 'admin/api/photos',
 								method : 'post',
 								contentType : 'application/json',
 								data : JSON.stringify({
@@ -151,7 +151,7 @@ SOFTWARE.
 						$('tbody').html('');
 						
 						$.ajax({
-							url : '/admin/api/photos',
+							url : 'admin/api/photos',
 							method : 'get',
 							success : function(data) {
 								

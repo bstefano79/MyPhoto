@@ -17,7 +17,7 @@ public class FakeDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		if(username!="pippo")
+		if(!username.equals("pippo"))
 		{
 			throw new UsernameNotFoundException(username+" not found!");
 		}

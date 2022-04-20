@@ -100,7 +100,7 @@ SOFTWARE.
 						} else {
 							
 							$.ajax({
-								url : '/admin/api/photos/' + id,
+								url : 'admin/api/photos/' + id,
 								method : 'put',
 								contentType : 'application/json',
 								data : JSON.stringify({
@@ -130,7 +130,7 @@ SOFTWARE.
 						var id = $(this).data('id');
 						
 						$.ajax({
-							url : '/admin/api/photos/' + id,
+							url : 'admin/api/photos/' + id,
 							method : 'delete',
 							success : function(data) {
 								
